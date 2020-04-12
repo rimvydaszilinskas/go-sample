@@ -1,9 +1,10 @@
 package controllers
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	"github.com/rimvydaszilinskas/bookstore/models"
-	"net/http"
 )
 
 func ListBooks(c *gin.Context) {
@@ -46,9 +47,9 @@ func AddBook(c *gin.Context) {
 	}
 
 	book := models.Book{
-		Title: input.Title,
+		Title:       input.Title,
 		Description: input.Description,
-		Author: author,
+		Author:      author,
 	}
 	models.DB.Create(&book)
 	c.JSON(http.StatusCreated, author)

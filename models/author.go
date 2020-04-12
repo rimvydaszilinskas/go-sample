@@ -4,6 +4,6 @@ import "github.com/jinzhu/gorm"
 
 type Author struct {
 	gorm.Model
-	Name string `json:"name"`
+	Name         string `json:"name"`
 	Introduction string `json:"intro"`
 }

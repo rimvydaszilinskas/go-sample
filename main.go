@@ -14,7 +14,7 @@ func main() {
 	app := gin.Default()
 
 	app.GET("/", func(c *gin.Context) {
-		c.JSON(200, gin.H {
+		c.JSON(200, gin.H{
 			"name": "name",
 		})
 	})

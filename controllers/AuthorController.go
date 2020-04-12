@@ -1,9 +1,10 @@
 package controllers
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	"github.com/rimvydaszilinskas/bookstore/models"
-	"net/http"
 )
 
 func ListAuthors(c *gin.Context) {
@@ -23,7 +24,7 @@ func AddAuthor(c *gin.Context) {
 	}
 
 	author := models.Author{
-		Name: input.Name,
+		Name:         input.Name,
 		Introduction: input.Introduction,
 	}
 	models.DB.Create(&author)
